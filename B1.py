@@ -4,6 +4,7 @@ from sympy import symbols, factorial
 u = symbols('u')
 
 # univariate Parameter B
+# This function is for finding the Bernstein basis function
 def B1(i, dg, u):
     
     # ith univariate BB form of degree dg
