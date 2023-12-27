@@ -27,8 +27,9 @@ def bb1raise(bb,d):
 
 
 
-
-d = 2 # degree
-bb = [sympy.symbols('b1_%d' % i) for i in range(d+1)]
-bb1 = bb1raise(bb,d)
-print(bb1)
+test = 0
+if test == 1:
+    d = 2 # degree
+    bb = [sympy.symbols('b1_%d' % i) for i in range(d+1)]
+    bb1 = bb1raise(bb,d)
+    print(bb1)

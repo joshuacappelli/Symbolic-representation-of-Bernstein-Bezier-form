@@ -17,14 +17,15 @@ def bb1_sub(b, bl, br, dg, s):
     return b_local
 
 
-
-dg = 2
-bb = [symbols('bb_%d' % i) for i in range(dg + 1)]
-# initialize b1 and b2
-b1 = [0] * (dg+1)
-b2 = [0] * (dg+1)
-out = bb1_sub(bb,b1,b2,dg,1/2)
-print(out)
-print()
-print(b1)
-print(b2)
+test = 0
+if test == 1:
+    dg = 2
+    bb = [symbols('bb_%d' % i) for i in range(dg + 1)]
+    # initialize b1 and b2
+    b1 = [0] * (dg+1)
+    b2 = [0] * (dg+1)
+    out = bb1_sub(bb,b1,b2,dg,1/2)
+    print(out)
+    print()
+    print(b1)
+    print(b2)

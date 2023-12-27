@@ -34,7 +34,7 @@ def bb1mult(b1, d1, b2, d2, lo=None, hi=None):
     return out
 
 # Test
-test = 1
+test = 0
 if test == 1:
     dg1 = 2
     dg2 = 1
