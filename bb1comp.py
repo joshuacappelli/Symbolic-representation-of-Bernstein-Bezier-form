@@ -2,7 +2,6 @@ import math
 # import the bb1add and bb1mult function
 from bb1add import bb1add 
 from bb1mult import bb1mult
-from sympy.tensor.array.expressions import ArraySymbol
 from sympy import symbols, binomial, expand, simplify
 
 
@@ -58,7 +57,7 @@ def bb11comp(xyz, xyz_dg, u, u_dg, umx=None, xmx=None):
     return pat
 
 
-test = 1
+test = 3
 if test == 1:
     u_dg = 2
     u = [0, 1/2, 1]
@@ -85,13 +84,9 @@ elif test == 3:
     # Calculate p1
     mdg = u_dg * xyz_dg
     p1 = sum(p[l] * binomial(mdg, l) * (1 - t) ** (mdg - l) * t ** l for l in range(mdg + 1))
-    # simplify can simplify the answer by applying various algebraic manipulations
-    # such as combining like terms, factoring, and simplifying fractions.
     print("p1", simplify(p1)) 
 
     # Calculate p2
     v = t ** 2
     p2 = sum(xy[k] * binomial(xyz_dg, k) * (1 - v) ** (xyz_dg - k) * v ** k for k in range(xyz_dg + 1))
-    # expand is a function that takes a mathematical expression and expands it 
-    # by distributing multiplication over addition, applying the distributive property, and combining like terms. 
     print("p2", simplify(expand(p2)))
