@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from bb1eval import bb1eval
 
 def bezier_curve(control_points, num_points=100):
     """
@@ -20,7 +21,9 @@ def bezier_curve(control_points, num_points=100):
 
     for i, t in enumerate(t_values):
         for j in range(n + 1):
+            
             curve_points[i] += control_points[j] * np.math.comb(n, j) * ((1 - t) ** (n - j)) * (t ** j)
+            #curve_points[i] += bb1eval(control_points[j],i,t)
 
     print(curve_points)
 
