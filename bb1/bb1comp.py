@@ -22,10 +22,6 @@ def bb11comp(xyz, xyz_dg, u, u_dg, umx=None, xmx=None):
     U = [0] * (dg + 1)
     ww = [0] * (u_dg + 1)
     
-    xyz_local = []
-    for i in range(xyz_dg+1):
-        xyz_local.append(xyz[i])
-        
     mult = 0
     idg = 0
     
@@ -77,6 +73,7 @@ elif test == 3:
     u = [0, 0, 1]
     xyz_dg = 2
     xy = [symbols('xy_%d' % i) for i in range(xyz_dg + 1)]
+    print("xy", xy)
     p = bb11comp(xy, xyz_dg, u, u_dg, 1, 1)
     print("p", p)
     
@@ -89,4 +86,4 @@ elif test == 3:
     # Calculate p2
     v = t ** 2
     p2 = sum(xy[k] * binomial(xyz_dg, k) * (1 - v) ** (xyz_dg - k) * v ** k for k in range(xyz_dg + 1))
-    print("p2", simplify(expand(p2)))
+    print("p2", expand(p2))
